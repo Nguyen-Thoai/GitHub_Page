@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>NTSGI Device - IOT Hardware</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div id="floating-bg">
+        <svg viewBox="0 0 696 316" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+    </div>
+
+    <div class="intro-section" id="introSection">
+        <canvas id="shader-canvas"></canvas>
+        <div class="intro-content">
+            <div class="status-badge">
+                <div class="pulse-dot"></div>
+                <span style="color:#fff;">NTSGI Device</span>
+            </div>
+            <h1 class="intro-title">IOT Hardware</h1>
+            <p class="intro-sub">The PCB hardware is meticulously refined down to each trace</p>
+            <button class="liquid-button" id="letsGoBtn">
+                <div class="glass-layer"></div>
+                <span>Let's Go →</span>
+            </button>
+            <div style="margin-top:1rem; font-size:0.75rem; color:rgba(255,255,255,0.4);">
+                Press to view detailed device specifications
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content" id="mainContent">
+        <div class="site-wrapper">
+
+            <nav>
+                <div class="nav-left">
+                    <div class="nav-logo">NTSGI</div>
+                    <button class="lang-toggle" id="langToggle">VI</button>
+                </div>
+                <div id="live-clock">
+                    <div class="clock-dot"></div>
+                    <span id="clock-time">--:--:--</span>
+                </div>
+            </nav>
+
+            <section class="hero">
+                <p class="hero-eyebrow">Advanced IoT Architecture</p>
+                <h1 class="hero-title" id="hero-title">
+                    Precision Sensing.<br />
+                    <strong>Wireless Intelligence.</strong>
+                </h1>
+                <p class="hero-sub" id="hero-sub">
+                    A dual-layer IoT ecosystem connecting a ruggedized Master Station to distributed Sensor Nodes over LoRa long-range RF — built for hydroponic environments demanding zero compromise.
+                </p>
+                <div class="hero-badges">
+                    <span class="badge gold">LoRa Long Range</span>
+                    <span class="badge gold">Real-Time RTC</span>
+                    <span class="badge gold">SHT30 Precision</span>
+                    <span class="badge gold">4-Ch Relay</span>
+                    <span class="badge gold">Solar Powered</span>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <section class="section">
+                <div class="section-header reveal">
+                    <p class="section-eyebrow">01 — Core Unit</p>
+                    <h2 class="section-title" id="master-title">
+                        Master Station <strong>Trạm Tổng</strong>
+                    </h2>
+                    <p class="section-desc" id="master-desc">
+                        Trung tâm điều khiển với vi điều khiển, màn hình cảm ứng, LoRa và cảm biến môi trường chính xác.
+                    </p>
+                </div>
+
+                <div class="master-grid">
+
+                    <div class="glass-card gold-accent master-hero reveal">
+                        <div class="master-icon">
+                            <div class="master-icon-ring"></div>
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="8" y="10" width="32" height="28" rx="3" />
+                                <line x1="16" y1="10" x2="16" y2="38" />
+                                <line x1="8" y1="22" x2="40" y2="22" />
+                                <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none" />
+                                <circle cx="12" cy="28" r="1.5" fill="currentColor" stroke="none" />
+                                <circle cx="20" cy="16" r="1.5" fill="currentColor" stroke="none" />
+                                <path d="M24 16 L36 16 M24 20 L34 20 M24 28 L36 28 M24 32 L32 32" />
+                            </svg>
+                        </div>
+                        <div class="master-hero-text">
+                            <h2>Master Control Station</h2>
+                            <p id="master-hero-desc">
+                                Ruggedized central hub with LoRa transceiver, multi-sensor fusion, and on-device display. Designed for industrial hydroponic environments with full battery independence.
+                            </p>
+                            <div class="master-tag">
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor">
+                                    <circle cx="5" cy="5" r="2" />
+                                    <circle cx="5" cy="5" r="4" fill="none" stroke="currentColor" stroke-width="1" />
+                                </svg>
+                                DUAL-LAYER PCB · HIGH-DENSITY VIA SHIELDING
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card gold-accent reveal">
+                        <div class="card-label">Core Hardware</div>
+                        <ul class="spec-list" id="spec-hardware">
+                            <li>
+                                <svg class="spec-icon" viewBox="0 0 18 18" fill="none" stroke="var(--gold)" stroke-width="1.5">
+                                    <rect x="3" y="3" width="12" height="12" rx="2" />
+                                    <rect x="6" y="6" width="6" height="6" rx="1" />
+                                </svg>
+                                <div>
+                                    <span class="spec-value">Dual-Layer PCB</span>
+                                    <span class="spec-desc">High-density via shielding, EMI suppression</span>
+                                </div>
+                            </li>
+                            <li>
+                                <svg class="spec-icon" viewBox="0 0 18 18" fill="none" stroke="var(--gold)" stroke-width="1.5">
+                                    <rect x="2" y="4" width="14" height="10" rx="2" />
+                                    <line x1="6" y1="4" x2="6" y2="14" />
+                                    <line x1="2" y1="9" x2="16" y2="9" />
+                                </svg>
+                                <div>
+                                    <span class="spec-value">3.5″ Display</span>
+                                    <span class="spec-desc">Integrated TFT touchscreen UI panel</span>
+                                </div>
+                            </li>
+                            <li>
+                                <svg class="spec-icon" viewBox="0 0 18 18" fill="none" stroke="var(--gold)" stroke-width="1.5">
+                                    <circle cx="9" cy="9" r="6" />
+                                    <circle cx="9" cy="9" r="2" fill="var(--gold)" stroke="none" />
+                                </svg>
+                                <div>
+                                    <span class="spec-value">WS2812B RGB LEDs</span>
+                                    <span class="spec-desc">Addressable status indicators, 16M colors</span>
+                                </div>
+                            </li>
+                            <li>
+                                <svg class="spec-icon" viewBox="0 0 18 18" fill="none" stroke="var(--gold)" stroke-width="1.5">
+                                    <path d="M9 3 L9 6 M9 12 L9 15 M3 9 L6 9 M12 9 L15 9" />
+                                    <circle cx="9" cy="9" r="3" />
+                                </svg>
+                                <div>
+                                    <span class="spec-value">Active Piezo Buzzer</span>
+                                    <span class="spec-desc">Audible alerts &amp; system feedback tones</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card gold-accent reveal">
+                        <div class="card-label">Connectivity &amp; Sensors</div>
+                        <ul class="spec-list" id="spec-connectivity">
+                            <li>
+                                <svg class="spec-icon" viewBox="0 0 18 18" fill="none" stroke="var(--blue-bright)" stroke-width="1.5">
+                                    <path d="M3 9 Q9 3 15 9 Q9 15 3 9" />
+                                    <circle cx="9" cy="9" r="2" />
+                                </svg>
+                                <div>
+                                    <span class="spec-value">LoRa Transceiver</span>
+                                    <span class="spec-desc">433 MHz, up to 10 km, AES-128</span>
+                                </div>
+                            </li>
+                            <li>
+                                <svg class="spec-icon" viewBox="0 0 18 18" fill="none" stroke="var(--blue-bright)" stroke-width="1.5">
+                                    <path d="M4 14 Q9 4 14 14" />
+                                    <path d="M6 12 Q9 7 12 12" />
+                                </svg>
+                                <div>
+                                    <span class="spec-value">SHT30 Temp / Humi</span>
+                                    <span class="spec-desc">±0.2°C, ±2% RH precision</span>
+                                </div>
+                            </li>
+                            <li>
+                                <svg class="spec-icon" viewBox="0 0 18 18" fill="none" stroke="var(--gold)" stroke-width="1.5">
+                                    <circle cx="9" cy="8" r="4" />
+                                    <path d="M7 12 L9 16 L11 12" />
+                                </svg>
+                                <div>
+                                    <span class="spec-value">TEMT6000 Ambient Light</span>
+                                    <span class="spec-desc">Silicon phototransistor, 570 nm peak</span>
+                                </div>
+                            </li>
+                            <li>
+                                <svg class="spec-icon" viewBox="0 0 18 18" fill="none" stroke="var(--slate)" stroke-width="1.5">
+                                    <circle cx="9" cy="9" r="5" />
+                                    <polyline points="9,5 9,9 12,11" />
+                                </svg>
+                                <div>
+                                    <span class="spec-value">DS3231 RTC</span>
+                                    <span class="spec-desc">±2 ppm accuracy, TCXO</span>
+                                </div>
+                            </li>
+                            <li>
+                                <svg class="spec-icon" viewBox="0 0 18 18" fill="none" stroke="var(--slate)" stroke-width="1.5">
+                                    <rect x="4" y="6" width="10" height="8" rx="1" />
+                                    <path d="M7 6 L7 4 L11 4 L11 6" />
+                                </svg>
+                                <div>
+                                    <span class="spec-value">MicroSD Logger</span>
+                                    <span class="spec-desc">FAT32, up to 32 GB, CSV &amp; JSON</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card gold-accent reveal" style="grid-column:1/-1;">
+                        <div class="card-label">Power Management</div>
+                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:20px;">
+                            <ul class="spec-list" id="spec-power-left">
+                                <li>
+                                    <svg class="spec-icon" viewBox="0 0 18 18" fill="none" stroke="var(--gold)" stroke-width="1.5">
+                                        <rect x="3" y="5" width="13" height="8" rx="2" />
+                                        <path d="M16 8 L17 8 L17 10 L16 10" />
+                                    </svg>
+                                    <div>
+                                        <span class="spec-value">3000 mAh Lithium</span>
+                                        <span class="spec-desc">Onboard rechargeable battery pack</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <svg class="spec-icon" viewBox="0 0 18 18" fill="none" stroke="var(--gold)" stroke-width="1.5">
+                                        <path d="M5 9 L9 4 L9 8 L13 8 L9 13 L9 9 Z" />
+                                    </svg>
+                                    <div>
+                                        <span class="spec-value">Dedicated BMS IC</span>
+                                        <span class="spec-desc">Charge/discharge control, cell balancing</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="spec-list" id="spec-power-right">
+                                <li>
+                                    <svg class="spec-icon" viewBox="0 0 18 18" fill="none" stroke="var(--blue-bright)" stroke-width="1.5">
+                                        <path d="M4 6 L8 6 L8 4 L10 4 L10 6 L14 6 L14 12 L4 12 Z" />
+                                        <line x1="7" y1="9" x2="11" y2="9" />
+                                    </svg>
+                                    <div>
+                                        <span class="spec-value">Dual-Transistor Op-Amp</span>
+                                        <span class="spec-desc">Smart power switching, low quiescent</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <svg class="spec-icon" viewBox="0 0 18 18" fill="none" stroke="var(--blue-bright)" stroke-width="1.5">
+                                        <circle cx="9" cy="9" r="6" />
+                                        <line x1="9" y1="5" x2="9" y2="13" />
+                                        <line x1="5" y1="9" x2="13" y2="9" />
+                                    </svg>
+                                    <div>
+                                        <span class="spec-value">PPTC Fuse Protection</span>
+                                        <span class="spec-desc">Resettable overcurrent protection</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="battery-wrap">
+                            <div class="battery-head">
+                                <span>BATTERY LEVEL</span>
+                                <span id="batt-pct" style="color:var(--gold);">78%</span>
+                            </div>
+                            <div class="battery-track">
+                                <div class="battery-fill" id="batt-fill" style="width:78%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <section class="section">
+                <div class="section-header reveal">
+                    <p class="section-eyebrow">02 — Distributed Nodes</p>
+                    <h2 class="section-title" id="nodes-title">
+                        Sensor Nodes <strong>Nút Cảm Biến</strong>
+                    </h2>
+                    <p class="section-desc" id="nodes-desc">
+                        Ba nút cảm biến phân tán, kết nối LoRa, chuyên biệt cho nước, điều khiển relay và năng lượng mặt trời.
+                    </p>
+                </div>
+
+                <div class="nodes-grid">
+
+                    <div class="glass-card blue-accent node-card reveal">
+                        <div class="node-header">
+                            <div class="node-icon blue">💧</div>
+                            <div>
+                                <div class="node-name">Water Quality</div>
+                                <div class="node-sub">Node · Hydro-01</div>
+                            </div>
+                        </div>
+                        <ul class="spec-list" id="node-water-specs">
+                            <li>
+                                <svg class="spec-icon" viewBox="0 0 18 18" fill="none" stroke="var(--blue-bright)" stroke-width="1.5">
+                                    <path d="M9 3 Q13 8 13 11 A4 4 0 0 1 5 11 Q5 8 9 3Z" />
+                                </svg>
+                                <div>
+                                    <span class="spec-value">TDS Sensor</span>
+                                    <span class="spec-desc">EC / TDS, 0-9990 ppm</span>
+                                </div>
+                            </li>
+                            <li>
+                                <svg class="spec-icon" viewBox="0 0 18 18" fill="none" stroke="var(--blue-bright)" stroke-width="1.5">
+                                    <path d="M4 14 Q9 4 14 14" />
+                                    <path d="M6 12 Q9 7 12 12" />
+                                </svg>
+                                <div>
+                                    <span class="spec-value">DS18B20 Water Temp</span>
+                                    <span class="spec-desc">1-Wire, ±0.5°C, waterproof</span>
+                                </div>
+                            </li>
+                            <li>
+                                <svg class="spec-icon" viewBox="0 0 18 18" fill="none" stroke="var(--blue-bright)" stroke-width="1.5">
+                                    <circle cx="9" cy="9" r="5" />
+                                    <text x="5.5" y="12.5" font-size="6" fill="var(--blue-bright)" stroke="none" font-family="monospace">pH</text>
+                                </svg>
+                                <div>
+                                    <span class="spec-value">pH Probe</span>
+                                    <span class="spec-desc">Analog, pH 0-14, auto-cal</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="status-row">
+                            <div class="status-dot online"></div>
+                            <span class="status-text">ONLINE</span>
+                            <span class="rssi-val">-80 dBm</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card blue-accent node-card reveal">
+                        <div class="node-header">
+                            <div class="node-icon orange">⚡</div>
+                            <div>
+                                <div class="node-name">Relay Control</div>
+                                <div class="node-sub">Node · Relay-01</div>
+                            </div>
+                        </div>
+                        <ul class="spec-list" id="node-relay-specs">
+                            <li>
+                                <svg class="spec-icon" viewBox="0 0 18 18" fill="none" stroke="var(--gold)" stroke-width="1.5">
+                                    <rect x="3" y="6" width="12" height="6" rx="2" />
+                                    <line x1="6" y1="6" x2="6" y2="12" />
+                                    <line x1="9" y1="6" x2="9" y2="12" />
+                                    <line x1="12" y1="6" x2="12" y2="12" />
+                                </svg>
+                                <div>
+                                    <span class="spec-value">4-Channel Relay</span>
+                                    <span class="spec-desc">10A/250VAC per ch, optoisolated</span>
+                                </div>
+                            </li>
+                            <li>
+                                <svg class="spec-icon" viewBox="0 0 18 18" fill="none" stroke="var(--gold)" stroke-width="1.5">
+                                    <path d="M5 9 L9 4 L9 8 L13 8 L9 13 L9 9 Z" />
+                                </svg>
+                                <div>
+                                    <span class="spec-value">220V SMPS</span>
+                                    <span class="spec-desc">5V/3A regulated</span>
+                                </div>
+                            </li>
+                            <li>
+                                <svg class="spec-icon" viewBox="0 0 18 18" fill="none" stroke="var(--gold)" stroke-width="1.5">
+                                    <rect x="3" y="5" width="13" height="8" rx="2" />
+                                    <path d="M16 8 L17 8 L17 10 L16 10" />
+                                </svg>
+                                <div>
+                                    <span class="spec-value">Battery Backup</span>
+                                    <span class="spec-desc">UPS mode, seamless failover</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="status-row">
+                            <div class="status-dot online"></div>
+                            <span class="status-text">ONLINE</span>
+                            <span class="rssi-val">-80 dBm</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card blue-accent node-card reveal">
+                        <div class="node-header">
+                            <div class="node-icon green">☀️</div>
+                            <div>
+                                <div class="node-name">Solar Power</div>
+                                <div class="node-sub">Node · Power-01</div>
+                            </div>
+                        </div>
+                        <ul class="spec-list" id="node-solar-specs">
+                            <li>
+                                <svg class="spec-icon" viewBox="0 0 18 18" fill="none" stroke="#3DCC7A" stroke-width="1.5">
+                                    <rect x="2" y="5" width="14" height="8" rx="2" />
+                                    <line x1="5" y1="5" x2="5" y2="13" />
+                                    <line x1="9" y1="5" x2="9" y2="13" />
+                                    <line x1="13" y1="5" x2="13" y2="13" />
+                                </svg>
+                                <div>
+                                    <span class="spec-value">Solar Panel Input</span>
+                                    <span class="spec-desc">MPPT, 25W panel</span>
+                                </div>
+                            </li>
+                            <li>
+                                <svg class="spec-icon" viewBox="0 0 18 18" fill="none" stroke="#3DCC7A" stroke-width="1.5">
+                                    <rect x="3" y="5" width="13" height="8" rx="2" />
+                                    <path d="M16 8 L17 8 L17 10 L16 10" />
+                                    <line x1="7" y1="5" x2="7" y2="13" />
+                                </svg>
+                                <div>
+                                    <span class="spec-value">LiPo Backup</span>
+                                    <span class="spec-desc">3.7V / 3000 mAh, 12h autonomy</span>
+                                </div>
+                            </li>
+                            <li>
+                                <svg class="spec-icon" viewBox="0 0 18 18" fill="none" stroke="#3DCC7A" stroke-width="1.5">
+                                    <path d="M4 6 L8 6 L8 4 L10 4 L10 6 L14 6 L14 12 L4 12 Z" />
+                                </svg>
+                                <div>
+                                    <span class="spec-value">BMS Protection</span>
+                                    <span class="spec-desc">OCP, UVP, OTP guard</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="status-row">
+                            <div class="status-dot online"></div>
+                            <span class="status-text">CHARGING</span>
+                            <span class="rssi-val" style="color:#3DCC7A;">-80 dBm</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <section class="section">
+                <div class="section-header reveal">
+                    <p class="section-eyebrow">03 — System Metrics</p>
+                    <h2 class="section-title" id="metrics-title">
+                        Performance <strong>Thông Số Kỹ Thuật</strong>
+                    </h2>
+                </div>
+                <div class="metrics-grid">
+                    <div class="glass-card gold-accent metric-card reveal">
+                        <div class="metric-number">10km</div>
+                        <div class="metric-label">LoRa Range</div>
+                        <div class="metric-sub">LINE OF SIGHT</div>
+                    </div>
+                    <div class="glass-card gold-accent metric-card reveal">
+                        <div class="metric-number">12h</div>
+                        <div class="metric-label">Battery Autonomy</div>
+                        <div class="metric-sub">SOLAR-ASSISTED</div>
+                    </div>
+                    <div class="glass-card gold-accent metric-card reveal">
+                        <div class="metric-number">±0.2°</div>
+                        <div class="metric-label">Temp Accuracy</div>
+                        <div class="metric-sub">SHT30 CELSIUS</div>
+                    </div>
+                    <div class="glass-card gold-accent metric-card reveal">
+                        <div class="metric-number">4Ch</div>
+                        <div class="metric-label">Relay Control</div>
+                        <div class="metric-sub">250VAC / 10A</div>
+                    </div>
+                    <div class="glass-card gold-accent metric-card reveal">
+                        <div class="metric-number">128bit</div>
+                        <div class="metric-label">AES Encryption</div>
+                        <div class="metric-sub">OVER THE AIR</div>
+                    </div>
+                    <div class="glass-card gold-accent metric-card reveal">
+                        <div class="metric-number">32GB</div>
+                        <div class="metric-label">SD Logging</div>
+                        <div class="metric-sub">CSV + JSON</div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <section class="section">
+                <div class="section-header reveal">
+                    <p class="section-eyebrow">04 — Why NTSGI</p>
+                    <h2 class="section-title" id="features-title">
+                        Built for <strong>Hydroponic &amp; Industrial</strong>
+                    </h2>
+                    <p class="section-desc" id="features-desc">
+                        Những tính năng cốt lõi giúp hệ thống vận hành bền bỉ, chính xác và không phụ thuộc vào nguồn điện lưới.
+                    </p>
+                </div>
+                <div class="feature-grid">
+
+                    <div class="glass-card gold-accent feature-item reveal">
+                        <div class="fi-icon">🔋</div>
+                        <div class="fi-content">
+                            <h3 id="feat-title-1">Low-Power Architecture</h3>
+                            <p id="feat-desc-1">
+                                Quản lý năng lượng thông minh với chế độ ngủ sâu (deep sleep), chỉ tiêu thụ vài mA ở chế độ hoạt động, kéo dài thời gian vận hành khi mất điện.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card gold-accent feature-item reveal">
+                        <div class="fi-icon">📡</div>
+                        <div class="fi-content">
+                            <h3 id="feat-title-2">LoRa Mesh Ready</h3>
+                            <p id="feat-desc-2">
+                                Giao thức LoRa hỗ trợ mesh network, cho phép các node trung chuyển dữ liệu, mở rộng phủ sóng lên đến vài chục km trong điều kiện thực tế.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card gold-accent feature-item reveal">
+                        <div class="fi-icon">🧪</div>
+                        <div class="fi-content">
+                            <h3 id="feat-title-3">Industrial-Grade Sensors</h3>
+                            <p id="feat-desc-3">
+                                SHT30, DS18B20, TEMT6000, TDS, pH - tất cả đều được chọn lọc theo tiêu chuẩn công nghiệp, độ ổn định cao, nhiễu thấp và tuổi thọ dài.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card gold-accent feature-item reveal">
+                        <div class="fi-icon">🛡️</div>
+                        <div class="fi-content">
+                            <h3 id="feat-title-4">Ruggedized Design</h3>
+                            <p id="feat-desc-4">
+                                PCB 2 lớp với via che chắn, lớp phủ bảo vệ conformal coating, chống ẩm, chống bụi, hoạt động ổn định trong môi trường nhà kính và ngoài trời.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <footer>
+                <div class="footer-brand">
+                    <strong>NTSGI</strong> · Copyright (C) 2026 Nguyên Thoại.
+                </div>
+                <div class="footer-links">
+                    <a href="#">Documentation</a>
+                    <a href="https://github.com/Nguyen-Thoai" target="_blank">GitHub</a>
+                    <a href="https://cdn.jsdelivr.net/gh/Nguyen-Thoai/Github_Page@main/Hardware.png" target="_blank">Hardware</a>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.128.0/build/three.module.js"
+            }
+        }
+    </script>
+    <script type="module" src="three-init.js"></script>
+    <script src="scripts.js"></script>
+
+</body>
+</html>
